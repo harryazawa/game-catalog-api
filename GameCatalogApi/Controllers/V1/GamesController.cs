@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GameCatalogApi.InputModel;
+using GameCatalogApi.ViewModel;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace GameCatalogApi.Controllers.V1;
@@ -13,25 +15,25 @@ namespace GameCatalogApi.Controllers.V1;
 public class GamesController : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<List<object>>> Get()
+    public async Task<ActionResult<List<GameViewModel>>> Get()
     {
         return Ok();
     }
     
     [HttpGet("{gameId:guid}")]
-    public async Task<ActionResult<object>> Get(Guid gameId)
+    public async Task<ActionResult<GameViewModel>> Get(Guid gameId)
     {
         return Ok();
     }
 
     [HttpPost]
-    public async Task<ActionResult<object>> PostGame()
+    public async Task<ActionResult<GameViewModel>> PostGame(GameInputModel game)
     {
         return Ok();
     }
 
     [HttpPut("{gameId:guid}")]
-    public async Task<ActionResult> UpdateGame(Guid gameId, object game)
+    public async Task<ActionResult> UpdateGame(Guid gameId, GameInputModel game)
     {
         return Ok();
     }
