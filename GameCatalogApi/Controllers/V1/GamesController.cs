@@ -76,7 +76,7 @@ public class GamesController : ControllerBase
         }
     }
 
-    [HttpPatch("{gameId:guid}/price/{price:double)")]
+    [HttpPatch("{gameId:guid}/price/{price:double}")]
     public async Task<ActionResult> UpdateGame([FromRoute] Guid gameId, [FromRoute] double price)
     {
         try
