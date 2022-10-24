@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using GameCatalogApi.Exceptions;
 using GameCatalogApi.InputModel;
 using GameCatalogApi.Services;
 using GameCatalogApi.ViewModel;
@@ -54,8 +55,7 @@ public class GamesController : ControllerBase
 
             return Ok(game);
         }
-        // catch (GameAlreadyRegisteredException ex)
-        catch(Exception ex)
+        catch (GameAlreadyRegisteredException ex)
         {
             return UnprocessableEntity("A game with this name has already been registered under this Developer.");
         }
@@ -70,8 +70,7 @@ public class GamesController : ControllerBase
 
             return Ok();
         }
-        // catch (GameNotRegisteredException ex)
-        catch (Exception ex)
+        catch (GameNotRegisteredException ex)
         {
             return NotFound("Game not found");
         }
@@ -86,8 +85,7 @@ public class GamesController : ControllerBase
 
             return Ok();
         }
-        // catch (GameNotRegisteredException ex)
-        catch (Exception ex)
+        catch (GameNotRegisteredException ex)
         {
             return NotFound("Game not found");
         }
@@ -102,8 +100,7 @@ public class GamesController : ControllerBase
 
             return Ok();
         }
-        // catch (GameNotRegisteredException ex)
-        catch (Exception ex)
+        catch (GameNotRegisteredException ex)
         {
             return NotFound("Game not found");
         }
