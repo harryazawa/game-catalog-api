@@ -1,4 +1,5 @@
 using GameCatalogApi.Controllers.V1;
+using GameCatalogApi.Middleware;
 using GameCatalogApi.Repositories;
 using GameCatalogApi.Services;
 
@@ -32,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// If you want to use ExceptionMiddleware, "uncomment" the following line and use it instead of Default Exception:
+// app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
